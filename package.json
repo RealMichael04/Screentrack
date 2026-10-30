@@ -1,0 +1,16 @@
+{
+  "name": "screentrack",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ScreenTrack — a concept landing page for an all-in-one movie and TV tracking platform.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  }
+}
