@@ -1,8 +1,8 @@
 {
-  "name": "screentrack",
+  "name": "reelguide",
   "version": "1.0.0",
   "private": true,
-  "description": "ScreenTrack — a concept landing page for an all-in-one movie and TV tracking platform.",
+  "description": "ReelGuide — a concept landing page for an all-in-one movie and TV tracking platform.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

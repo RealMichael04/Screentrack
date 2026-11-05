@@ -1,6 +1,6 @@
-# ScreenTrack
+# ReelGuide
 
-A one-page concept landing page for **ScreenTrack**, an all-in-one movie and TV companion: track what you watch, get personalized recommendations, follow franchises in any viewing order, and keep an entertainment calendar.
+A one-page concept landing page for **ReelGuide**, an all-in-one movie and TV companion: track what you watch, get personalized recommendations, follow franchises in any viewing order, and keep an entertainment calendar.
 
 Created by Michael Richardson.
 
@@ -24,11 +24,13 @@ Push this folder to a GitHub repository, then import it at vercel.com/new. Verce
 ```
 app/
   layout.js        fonts, metadata
+  icon.svg         favicon
   page.js          assembles the sections
   globals.css      all styling (dark cinematic theme, responsive rules)
 components/
   Nav, Hero, Features, HowItWorks, Track, Updates,
   Recommendations, Franchise, Calendar, Creator, Footer
+  Logo.js          clapperboard-and-path logo
   Poster.js        code-generated poster artwork
   Reveal.js        scroll-in animation wrapper
 data/

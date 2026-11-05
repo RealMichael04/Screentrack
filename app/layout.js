@@ -4,13 +4,13 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 
 export const metadata = {
-  title: "ScreenTrack — Everything You Watch. Everything You Want to Watch.",
+  title: "ReelGuide — Everything You Watch. Everything You Want to Watch.",
   description:
-    "ScreenTrack is an all-in-one entertainment companion: track what you watch, discover new movies and shows, follow franchises and never miss an update.",
+    "ReelGuide is an all-in-one entertainment companion: track what you watch, discover new movies and shows, follow franchises and never miss an update.",
 };
 
 export const viewport = {
-  themeColor: "#07070a",
+  themeColor: "#080606",
 };
 
 export default function RootLayout({ children }) {

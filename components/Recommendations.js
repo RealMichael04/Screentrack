@@ -88,7 +88,7 @@ export default function Recommendations() {
     <section className="section" id="recommendations">
       <div className="container">
         <SectionHeader eyebrow="Personalized recommendations" title="Tell us your taste once. Get picks that actually fit." align="center">
-          A short profile survey teaches ScreenTrack what you love — so recommendations and search
+          A short profile survey teaches ReelGuide what you love — so recommendations and search
           results reflect your genres, runtimes, favorite people and the kind of stories you enjoy.
         </SectionHeader>
 
@@ -165,7 +165,7 @@ export default function Recommendations() {
             <form className="search" onSubmit={runSearch}>
               <span className="search__icon" aria-hidden="true">✦</span>
               <input
-                aria-label="Ask ScreenTrack"
+                aria-label="Ask ReelGuide"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Describe what you're in the mood for…"

@@ -7,7 +7,7 @@ const features = [
   { href: "#recommendations", icon: "✦", title: "Made For You", text: "A short taste profile powers recommendations and natural-language search." },
   { href: "#franchise", icon: "▶", title: "Franchise Guides", text: "Binge any universe in chronological, release, recommended or completionist order." },
   { href: "#calendar", icon: "▦", title: "Entertainment Calendar", text: "Premieres, finales and release days for everything you care about, on one calendar." },
-  { href: "#how-it-works", icon: "⟶", title: "Effortless Setup", text: "Build your profile in minutes and ScreenTrack starts working for you." },
+  { href: "#how-it-works", icon: "⟶", title: "Effortless Setup", text: "Build your profile in minutes and ReelGuide starts working for you." },
 ];
 
 export default function Features() {
@@ -16,7 +16,7 @@ export default function Features() {
       <div className="container">
         <SectionHeader eyebrow="Features" title="More than a watchlist." align="center">
           Today, fans juggle streaming apps, trailer channels, news sites and spreadsheets.
-          ScreenTrack brings tracking, discovery, news and planning into a single companion.
+          ReelGuide brings tracking, discovery, news and planning into a single companion.
         </SectionHeader>
         <div className="feature-grid">
           {features.map((f, i) => (

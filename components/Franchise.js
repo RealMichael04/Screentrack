@@ -30,14 +30,14 @@ export default function Franchise() {
       <div className="franchise__bg" aria-hidden="true" />
       <div className="container">
         <SectionHeader eyebrow="Discover a new franchise" title="Start any universe. Watch it your way." align="center">
-          Pick a franchise and ScreenTrack builds a guided watchlist in the order you prefer.
+          Pick a franchise and ReelGuide builds a guided watchlist in the order you prefer.
           Check off each entry as you go — your progress carries across every viewing order.
         </SectionHeader>
 
         <Reveal className="franchise">
           <div className="franchise__side">
             <div className="franchise__title">
-              <span className="pill pill--gold">Example franchise</span>
+              <span className="pill pill--orange">Example franchise</span>
               <h3>Star Wars</h3>
               <p className="muted">{filmCount} films{seriesCount ? ` · ${seriesCount} series` : ""}</p>
             </div>
@@ -116,7 +116,7 @@ export default function Franchise() {
               <span key={f} className="chip chip--tag">{f}</span>
             ))}
           </div>
-          <p className="caption">Franchise names are used for illustration only. ScreenTrack is a concept and is not affiliated with any studio.</p>
+          <p className="caption">Franchise names are used for illustration only. ReelGuide is a concept and is not affiliated with any studio.</p>
         </Reveal>
       </div>
     </section>

@@ -11,8 +11,8 @@ export default function Creator() {
           <h2 className="creator__name">Michael Richardson</h2>
           <p className="creator__line">Created by Michael Richardson.</p>
           <p className="lead">
-            ScreenTrack started with a simple frustration: keeping up with movies and TV meant jumping between
-            streaming apps, trailer channels, news sites and notes. ScreenTrack is the vision for one place that
+            ReelGuide started with a simple frustration: keeping up with movies and TV meant jumping between
+            streaming apps, trailer channels, news sites and notes. ReelGuide is the vision for one place that
             tracks, recommends, explains and plans everything worth watching.
           </p>
           <div className="hero__actions hero__actions--center">

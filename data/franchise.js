@@ -1,5 +1,5 @@
 // Star Wars franchise data used for the franchise guide demo.
-// Real titles are listed for illustration only; ScreenTrack is not affiliated with Lucasfilm or Disney.
+// Real titles are listed for illustration only; ReelGuide is not affiliated with Lucasfilm or Disney.
 
 export const entries = {
   acolyte: { title: "The Acolyte", year: 2024, type: "Series", length: "8 episodes", era: "High Republic" },

@@ -54,7 +54,7 @@ export default function Track() {
       <div className="container split">
         <div className="split__copy">
           <SectionHeader eyebrow="Track your entertainment" title="Your whole watch life, beautifully organized.">
-            Stop relying on memory and scattered notes. ScreenTrack remembers what you've watched,
+            Stop relying on memory and scattered notes. ReelGuide remembers what you've watched,
             where you paused, and how you felt about it.
           </SectionHeader>
           <ul className="checklist">
@@ -104,7 +104,7 @@ export default function Track() {
                   <span className="muted small">Season progress</span>
                   <h4>{titles.midnightAtlas.title} · Season 2</h4>
                 </div>
-                <span className="pill pill--gold">{episodes}/10 episodes</span>
+                <span className="pill pill--orange">{episodes}/10 episodes</span>
               </div>
               <div className="progress-bar"><span style={{ width: `${episodes * 10}%` }} /></div>
               <div className="episodes">

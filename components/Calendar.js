@@ -11,9 +11,9 @@ const MONTH = 10; // November (0-indexed)
 
 const types = {
   movie: { label: "Movie release", color: "var(--red)" },
-  premiere: { label: "Series premiere", color: "var(--gold)" },
-  season: { label: "New season", color: "var(--teal)" },
-  finale: { label: "Finale", color: "var(--violet)" },
+  premiere: { label: "Series premiere", color: "var(--orange)" },
+  season: { label: "New season", color: "var(--amber)" },
+  finale: { label: "Finale", color: "var(--rose)" },
 };
 
 // Sample schedule for the demo — not live release data.

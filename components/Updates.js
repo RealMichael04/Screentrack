@@ -1,6 +1,7 @@
 import SectionHeader from "./SectionHeader";
 import Reveal from "./Reveal";
 import Poster from "./Poster";
+import { LogoMark } from "./Logo";
 
 const updateTypes = [
   { icon: "▶", title: "Trailers & teasers", text: "New trailers for titles you follow, surfaced the moment they're added." },
@@ -23,7 +24,7 @@ export default function Updates() {
       <div className="container split split--reverse">
         <div className="split__copy">
           <SectionHeader eyebrow="Never miss an update" title="The news you care about. Nothing you don't.">
-            ScreenTrack is designed to watch the entertainment world for you and deliver only the updates
+            ReelGuide is designed to watch the entertainment world for you and deliver only the updates
             connected to the movies, shows and franchises you follow.
           </SectionHeader>
           <div className="mini-grid">
@@ -50,10 +51,8 @@ export default function Updates() {
 
               <div className="notification notification--hero">
                 <div className="notification__app">
-                  <span className="logo__mark logo__mark--sm" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" /></svg>
-                  </span>
-                  ScreenTrack <em>now</em>
+                  <LogoMark small />
+                  ReelGuide <em>now</em>
                 </div>
                 <strong>Your favorite show has officially announced a new season!</strong>
                 <p>Midnight Atlas has been renewed for Season 3. Tap to add the premiere to your calendar.</p>
