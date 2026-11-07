@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import Logo from "./Logo";
+import { authClient } from "@/lib/auth/client";
 
 const links = [
   { href: "#track", label: "Track" },
@@ -15,6 +17,14 @@ const links = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { data: session } = authClient.useSession();
+  const user = session?.user;
+  const initials = (user?.name || user?.email || "")
+    .split(/\s+/)
+    .map((p) => p[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -34,7 +44,18 @@ export default function Nav() {
             </a>
           ))}
         </nav>
-        <a href="#features" className="btn btn--small btn--primary nav__cta">Explore</a>
+        <div className="nav__auth">
+          {user ? (
+            <Link href="/account" className="nav__user" aria-label="Your account" title={user.name || user.email}>
+              {initials || "Me"}
+            </Link>
+          ) : (
+            <>
+              <Link href="/auth/sign-in" className="nav__signin">Sign in</Link>
+              <Link href="/auth/sign-up" className="btn btn--small btn--primary">Get started</Link>
+            </>
+          )}
+        </div>
         <button
           className="nav__toggle"
           aria-label="Toggle menu"

@@ -1331,3 +1331,147 @@ input[type="range"]::-moz-range-thumb {
   .section-header--center .eyebrow::before,
   .creator__card .eyebrow::before { display: none; }
 }
+
+/* ---------- Auth pages (sign in, sign up, account) ---------- */
+.auth {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 48px 16px;
+  overflow: hidden;
+}
+.auth__glow {
+  position: absolute;
+  inset: -20% -10% auto;
+  height: 70vh;
+  background:
+    radial-gradient(40% 50% at 30% 40%, rgba(255, 122, 26, 0.22), transparent 70%),
+    radial-gradient(40% 50% at 70% 30%, rgba(229, 56, 59, 0.2), transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+.auth__card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 36px 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(32, 25, 24, 0.92), rgba(15, 11, 10, 0.92));
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  text-align: center;
+}
+.auth__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 22px;
+}
+.auth__card h1 {
+  margin: 0 0 6px;
+  font-weight: 800;
+  font-size: 1.9rem;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+.auth__card > .muted { margin: 0 0 22px; }
+.auth__form { display: grid; gap: 14px; text-align: left; }
+.auth__form label { display: grid; gap: 6px; }
+.auth__form label span { font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+.auth__form input {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.auth__form input::placeholder { color: rgba(166, 156, 150, 0.6); }
+.auth__form input:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(255, 122, 26, 0.2);
+}
+.auth__submit { justify-content: center; width: 100%; margin-top: 6px; border: 0; cursor: pointer; }
+.auth__submit:disabled { opacity: 0.7; cursor: progress; transform: none; }
+.auth__error {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(229, 56, 59, 0.12);
+  border: 1px solid rgba(229, 56, 59, 0.4);
+  color: #ffb3b4;
+  font-size: 0.9rem;
+}
+.auth__notice {
+  margin: 0 0 18px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255, 192, 77, 0.08);
+  border: 1px solid rgba(255, 192, 77, 0.3);
+  color: var(--amber);
+  font-size: 0.88rem;
+}
+.auth__switch { margin: 20px 0 0; color: var(--muted); font-size: 0.92rem; }
+.auth__switch a { color: var(--orange-soft); font-weight: 600; }
+.auth__switch a:hover { text-decoration: underline; }
+
+.account__avatar {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 14px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--red), var(--red-deep));
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+.account__details {
+  margin: 0 0 18px;
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+.account__details div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line);
+}
+.account__details dt { color: var(--muted); font-size: 0.88rem; }
+.account__details dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; text-align: right; }
+.account__actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.account__actions button { border: 0; cursor: pointer; }
+
+/* Nav sign-in link */
+.nav__auth { display: flex; align-items: center; gap: 10px; }
+.nav__signin { color: var(--muted); font-weight: 600; font-size: 0.9rem; }
+.nav__signin:hover { color: var(--text); }
+.nav__user {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--red));
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+@media (max-width: 860px) {
+  .nav__auth { margin-left: auto; }
+  .nav__auth + .nav__toggle { margin-left: 10px; }
+}
+@media (max-width: 640px) {
+  .auth__card { padding: 28px 20px; }
+  .nav__auth .btn { display: none; }
+}

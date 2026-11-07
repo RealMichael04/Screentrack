@@ -39,3 +39,14 @@ data/
 ```
 
 All titles, posters, notifications and dates are sample data. No live data sources are connected.
+
+## Sign-in (Neon Auth)
+
+Accounts use [Neon Auth](https://neon.com/docs/auth). Pages: `/auth/sign-up`, `/auth/sign-in`, `/account` (protected).
+
+1. In the [Neon Console](https://console.neon.tech), open your project → **Auth** → **Enable Auth**, then copy the **Auth URL**.
+2. Paste it into `.env.local` as `NEON_AUTH_BASE_URL` (see `.env.example`). `NEON_AUTH_COOKIE_SECRET` is any random 32+ character string.
+3. Restart `npm run dev`.
+4. On Vercel, add the same two variables under **Project → Settings → Environment Variables**, then redeploy.
+
+Until the keys are added, the site still works and the sign-in pages show a "coming soon" notice.
