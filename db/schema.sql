@@ -91,3 +91,14 @@ CREATE TABLE IF NOT EXISTS tracked_episodes (
   watched_at     timestamptz NOT NULL DEFAULT now(),
   PRIMARY KEY (user_id, show_id, season_number, episode_number)
 );
+
+-- Who has Premium. Stripe is the source of truth; this is kept in step by webhooks.
+CREATE TABLE IF NOT EXISTS subscriptions (
+  user_id                text PRIMARY KEY,
+  stripe_customer_id     text NOT NULL UNIQUE,
+  stripe_subscription_id text NOT NULL UNIQUE,
+  status                 text NOT NULL,
+  current_period_end     timestamptz,
+  cancel_at_period_end   boolean NOT NULL DEFAULT false,
+  updated_at             timestamptz NOT NULL DEFAULT now()
+);

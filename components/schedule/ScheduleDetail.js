@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
+import UpgradeCard from "@/components/billing/UpgradeCard";
 import { WEEKDAYS, describeSuggestions, formatDate, formatMinutes, localToday } from "./format";
 
 const EXAMPLES = ["I'm busy next weekend", "I fell behind, respread what's left", "I can watch 3 hours a day now"];
@@ -11,7 +12,7 @@ function itemLabel(item) {
   return item.mediaType === "episode" ? `S${item.seasonNumber} E${item.episodeNumber} · ${item.title}` : item.title;
 }
 
-export default function ScheduleDetail({ initialSchedule }) {
+export default function ScheduleDetail({ initialSchedule, isPremium, offer }) {
   const router = useRouter();
   const [schedule, setSchedule] = useState(initialSchedule);
   const [today] = useState(localToday);
@@ -126,11 +127,11 @@ export default function ScheduleDetail({ initialSchedule }) {
           </p>
           {overdue > 0 && (
             <p className="auth__notice">
-              You&apos;re {overdue} behind. Ask below to respread what&apos;s left.
+              You&apos;re {overdue} behind.{isPremium ? " Ask below to respread what's left." : ""}
             </p>
           )}
 
-          <div className="survey__group">
+          {!isPremium ? <UpgradeCard offer={offer} compact /> : <div className="survey__group">
             <label htmlFor="adjust-input">Need to change something?</label>
             <form
               className="search"
@@ -161,7 +162,8 @@ export default function ScheduleDetail({ initialSchedule }) {
               {notice && <p className="live-save__ok small">{notice}</p>}
               {error && <p className="auth__error live-message" role="alert">{error}</p>}
             </div>
-          </div>
+          </div>}
+          {!isPremium && error && <p className="auth__error live-message" role="alert">{error}</p>}
 
           {schedule.skippedCount > 0 && (
             <p className="muted small">

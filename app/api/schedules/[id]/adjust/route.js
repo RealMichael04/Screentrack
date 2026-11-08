@@ -1,4 +1,5 @@
 import { fail, withUser } from "@/lib/apiHandler";
+import { requirePremium } from "@/lib/billing";
 import { consumeDailyAllowance } from "@/lib/rateLimit";
 import { adjustSchedule } from "@/lib/schedules";
 
@@ -13,6 +14,8 @@ export const POST = withUser(async (request, user, context) => {
   const text = typeof body?.request === "string" ? body.request.trim() : "";
   if (text.length < 3) return fail("Tell us what you'd like to change.", 400);
   if (text.length > MAX_REQUEST_LENGTH) return fail(`Please keep that under ${MAX_REQUEST_LENGTH} characters.`, 400);
+
+  await requirePremium(user.id);
 
   const allowed = await consumeDailyAllowance(user.id, "adjust", DAILY_ADJUSTMENTS);
   if (!allowed) return fail(`You've made ${DAILY_ADJUSTMENTS} changes today. Come back tomorrow!`, 429);

@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import UpgradeCard from "@/components/billing/UpgradeCard";
 import { WEEKDAYS, addDaysTo, describeSuggestions, formatDate, localToday } from "./format";
 
 const DAILY_LIMITS = [60, 90, 120, 180, 240];
 
-export default function ScheduleBuilder({ schedules }) {
+export default function ScheduleBuilder({ schedules, isPremium, offer }) {
   const router = useRouter();
 
   const [query, setQuery] = useState("");
@@ -103,6 +104,7 @@ export default function ScheduleBuilder({ schedules }) {
 
   return (
     <div className="reco">
+      {!isPremium ? <UpgradeCard offer={offer} /> : (
       <section className="survey" aria-label="New schedule">
         <div className="survey__head">
           <span className="pill pill--red">New schedule</span>
@@ -251,6 +253,7 @@ export default function ScheduleBuilder({ schedules }) {
           {creating ? "Building your schedule…" : "Build my schedule"}
         </button>
       </section>
+      )}
 
       <section className="search-panel" aria-label="Your schedules">
         <div className="survey__head">

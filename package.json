@@ -2,7 +2,7 @@
   "name": "reelguide",
   "version": "1.0.0",
   "private": true,
-  "description": "ReelGuide \u2014 a concept landing page for an all-in-one movie and TV tracking platform.",
+  "description": "ReelGuide — a concept landing page for an all-in-one movie and TV tracking platform.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,6 +16,7 @@
     "openai": "^7.53.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
-    "server-only": "^0.0.1"
+    "server-only": "^0.0.1",
+    "stripe": "^23.1.0"
   }
 }
