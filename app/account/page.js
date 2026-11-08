@@ -41,6 +41,8 @@ export default async function AccountPage() {
         </p>
 
         <div className="account__actions">
+          <Link href="/track" className="btn btn--ghost">My tracker</Link>
+          <Link href="/calendar" className="btn btn--ghost">My calendar</Link>
           <Link href="/recommend" className="btn btn--ghost">Get recommendations</Link>
           <Link href="/schedule" className="btn btn--ghost">My schedules</Link>
           <Link href="/" className="btn btn--ghost">Back to home</Link>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { WEEKDAYS, addDaysTo, describeSuggestions, formatDate, localToday } from "./format";
 
 const DAILY_LIMITS = [60, 90, 120, 180, 240];
@@ -18,6 +18,9 @@ export default function ScheduleBuilder({ schedules }) {
   const [chosenSeasons, setChosenSeasons] = useState([]);
 
   const [today] = useState(localToday);
+  // The server runs on UTC, so anything showing the local date waits for the browser.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const [startDate, setStartDate] = useState(today);
   const [deadline, setDeadline] = useState(() => addDaysTo(today, 30));
   const [viewingDays, setViewingDays] = useState([5, 6, 0]);
@@ -182,7 +185,7 @@ export default function ScheduleBuilder({ schedules }) {
           </div>
         )}
 
-        <div className="sched-dates">
+        {mounted && <div className="sched-dates">
           <div className="survey__group">
             <label htmlFor="start-date">Start</label>
             <input id="start-date" type="date" min={today} value={startDate} onChange={(e) => setStartDate(e.target.value)} />
@@ -191,7 +194,7 @@ export default function ScheduleBuilder({ schedules }) {
             <label htmlFor="deadline">Deadline</label>
             <input id="deadline" type="date" min={startDate} value={deadline} onChange={(e) => setDeadline(e.target.value)} />
           </div>
-        </div>
+        </div>}
 
         <div className="survey__group">
           <label>Days you can watch</label>

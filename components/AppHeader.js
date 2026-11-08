@@ -10,7 +10,9 @@ export default function AppHeader() {
           <span className="logo__text">Reel<span>Guide</span></span>
         </Link>
         <nav aria-label="App">
-          <Link href="/recommend">Recommendations</Link>
+          <Link href="/track">Tracker</Link>
+          <Link href="/calendar">Calendar</Link>
+          <Link href="/recommend">For You</Link>
           <Link href="/schedule">Schedules</Link>
           <Link href="/account">Account</Link>
         </nav>

@@ -62,3 +62,32 @@ ALTER TABLE schedules ADD COLUMN IF NOT EXISTS viewing_order text NOT NULL DEFAU
 ALTER TABLE schedules ADD COLUMN IF NOT EXISTS skipped_count integer NOT NULL DEFAULT 0;
 ALTER TABLE schedule_items ADD COLUMN IF NOT EXISTS runtime_estimated boolean NOT NULL DEFAULT false;
 ALTER TABLE schedule_items ADD COLUMN IF NOT EXISTS keep_with_next boolean NOT NULL DEFAULT false;
+
+-- A person's library of movies and shows.
+CREATE TABLE IF NOT EXISTS tracked_titles (
+  user_id       text NOT NULL,
+  media_type    text NOT NULL CHECK (media_type IN ('movie', 'tv')),
+  tmdb_id       integer NOT NULL,
+  title         text NOT NULL,
+  poster_url    text,
+  release_date  date,
+  collection_id integer,
+  episode_total integer,
+  status        text NOT NULL CHECK (status IN ('watchlist', 'watching', 'watched')),
+  rating        numeric(2, 1) CHECK (rating >= 0.5 AND rating <= 5),
+  review        text,
+  watched_at    timestamptz,
+  created_at    timestamptz NOT NULL DEFAULT now(),
+  updated_at    timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (user_id, media_type, tmdb_id)
+);
+
+-- Which episodes of a tracked show have been watched.
+CREATE TABLE IF NOT EXISTS tracked_episodes (
+  user_id        text NOT NULL,
+  show_id        integer NOT NULL,
+  season_number  integer NOT NULL,
+  episode_number integer NOT NULL,
+  watched_at     timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (user_id, show_id, season_number, episode_number)
+);

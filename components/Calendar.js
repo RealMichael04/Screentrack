@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import SectionHeader from "./SectionHeader";
 import Reveal from "./Reveal";
@@ -137,6 +138,9 @@ export default function Calendar() {
           </aside>
         </Reveal>
         <p className="caption caption--center">Sample schedule with fictional titles. In the full product, dates would sync from official release sources.</p>
+        <div className="reco-cta">
+          <Link href="/calendar" className="btn btn--primary">Open my real calendar</Link>
+        </div>
       </div>
     </section>
   );

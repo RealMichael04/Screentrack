@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import SectionHeader from "./SectionHeader";
 import Reveal from "./Reveal";
@@ -148,6 +149,9 @@ export default function Track() {
             </div>
           </div>
           <p className="caption">Interactive demo — click the tabs, episodes and stars.</p>
+          <div className="reco-cta">
+            <Link href="/track" className="btn btn--primary">Start tracking for real</Link>
+          </div>
         </Reveal>
       </div>
     </section>
