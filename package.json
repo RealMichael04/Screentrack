@@ -2,16 +2,20 @@
   "name": "reelguide",
   "version": "1.0.0",
   "private": true,
-  "description": "ReelGuide — a concept landing page for an all-in-one movie and TV tracking platform.",
+  "description": "ReelGuide \u2014 a concept landing page for an all-in-one movie and TV tracking platform.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "db:migrate": "node --env-file=.env.local scripts/migrate.mjs"
   },
   "dependencies": {
     "@neon/auth": "^0.8.2",
+    "@neondatabase/serverless": "^1.2.0",
     "next": "16.4.3",
+    "openai": "^7.53.0",
     "react": "19.3.1",
-    "react-dom": "19.3.1"
+    "react-dom": "19.3.1",
+    "server-only": "^0.0.1"
   }
 }

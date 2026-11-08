@@ -50,3 +50,12 @@ Accounts use [Neon Auth](https://neon.com/docs/auth). Pages: `/auth/sign-up`, `/
 4. On Vercel, add the same two variables under **Project → Settings → Environment Variables**, then redeploy.
 
 Until the keys are added, the site still works and the sign-in pages show a "coming soon" notice.
+
+## AI features (OpenAI + TMDB)
+
+- `/recommend`: plain-English search plus a saved taste profile.
+- `/schedule`: day-by-day viewing plans with progress tracking and plain-English changes.
+
+TMDB supplies every title, runtime and date. OpenAI interprets requests, ranks results and handles judgment calls, and `lib/calendar.js` does all date math. Everything runs server-side.
+
+Setup: add `OPENAI_API_KEY`, `TMDB_API_KEY` and `DATABASE_URL` to `.env.local` (see `.env.example`) and to Vercel, then run `npm run db:migrate` once.

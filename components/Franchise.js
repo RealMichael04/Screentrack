@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import SectionHeader from "./SectionHeader";
 import Reveal from "./Reveal";
@@ -117,6 +118,7 @@ export default function Franchise() {
             ))}
           </div>
           <p className="caption">Franchise names are used for illustration only. ReelGuide is a concept and is not affiliated with any studio.</p>
+          <Link href="/schedule" className="btn btn--primary">Build a real viewing schedule</Link>
         </Reveal>
       </div>
     </section>

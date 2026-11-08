@@ -7,3 +7,4 @@ out
 # Secrets
 .env
 .env*.local
+.next-stale*

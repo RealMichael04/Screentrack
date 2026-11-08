@@ -1475,3 +1475,89 @@ input[type="range"]::-moz-range-thumb {
   .auth__card { padding: 28px 20px; }
   .nav__auth .btn { display: none; }
 }
+
+/* ---------- Signed-in app pages ---------- */
+.app-header { border-bottom: 1px solid var(--line); background: rgba(8, 6, 6, 0.8); }
+.app-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; flex-wrap: wrap; }
+.app-header__brand { margin-bottom: 0; }
+.app-header nav { display: flex; gap: 20px; font-size: 0.9rem; color: var(--muted); }
+.app-header nav a:hover { color: var(--text); }
+.app-page { padding-top: 48px; padding-bottom: 64px; }
+.app-page .section-header { margin-bottom: 32px; }
+.app-page__title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; margin: 0 0 10px; }
+.app-page__credit { margin-top: 28px; }
+
+.reco-cta { display: flex; justify-content: center; margin-top: 18px; }
+.live-card { align-items: start; }
+.live-card__poster { width: 92px; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 10px; background: var(--surface-2); }
+.live-card__poster--empty { display: grid; place-items: center; font-size: 0.7rem; color: var(--muted); text-align: center; }
+.live-card__genres { font-size: 0.75rem; color: var(--muted); margin-bottom: 8px; }
+.reco-card p.live-card__reason { color: var(--text); margin: 0 0 6px; }
+.live-favorites { margin-bottom: 8px; }
+.live-favorites__add { display: flex; gap: 8px; }
+.live-favorites__add input {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 13px;
+  border-radius: 10px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.85rem;
+}
+.live-favorites__add input:focus { outline: none; border-color: var(--orange); }
+.live-save { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.live-save button { border: 0; cursor: pointer; }
+.live-save__ok { color: var(--amber); }
+.live-save__bad { color: #ffb3b4; }
+.live-message { margin: 16px 0 0; }
+.live-understood { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 16px; }
+.btn:disabled, .preset:disabled { opacity: 0.6; cursor: progress; transform: none; }
+
+/* ---------- Schedules ---------- */
+.sched-picked { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px 14px; border: 1px solid var(--line-strong); border-radius: 12px; }
+.sched-results { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; }
+.sched-results button { display: flex; align-items: center; gap: 12px; width: 100%; padding: 8px; border-radius: 10px; text-align: left; border: 1px solid var(--line); transition: border-color 0.2s; }
+.sched-results button:hover { border-color: var(--orange); }
+.sched-results img, .sched-results__blank { width: 34px; height: 51px; border-radius: 5px; object-fit: cover; background: var(--surface-2); flex: none; }
+.sched-results button > span:last-child { display: grid; gap: 2px; }
+.sched-two { grid-template-columns: repeat(2, 1fr); }
+.sched-dates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.sched-dates input, .sched-minutes {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  color-scheme: dark;
+  font: inherit;
+  font-size: 0.85rem;
+}
+.sched-dates input:focus, .sched-minutes:focus { outline: none; border-color: var(--orange); }
+.sched-minutes { max-width: 110px; margin-top: 10px; }
+.sched-create { width: 100%; justify-content: center; border: 0; cursor: pointer; margin-top: 6px; }
+.sched-create:disabled { cursor: not-allowed; }
+.sched-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.sched-list a { display: grid; gap: 6px; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); transition: border-color 0.25s; }
+.sched-list a:hover { border-color: var(--orange); }
+.sched-bar { display: block; height: 6px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); overflow: hidden; }
+.sched-bar > span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--orange), var(--red)); transition: width 0.4s var(--ease); }
+.sched-bar--large { height: 10px; }
+.sched-stats { margin: 12px 0 18px; }
+.sched-back { display: inline-block; margin-bottom: 18px; }
+.sched-presets { margin: 10px 0; }
+.sched-days { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.sched-day { padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.02); }
+.sched-day--today { border-color: var(--orange); }
+.sched-day__head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+.sched-day ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.sched-item { display: grid; grid-template-columns: 18px minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 5px 0; cursor: pointer; font-size: 0.9rem; }
+.sched-item input { width: 16px; height: 16px; accent-color: var(--orange); cursor: pointer; }
+.sched-item__title { overflow-wrap: anywhere; }
+.sched-item--done .sched-item__title { color: var(--muted); text-decoration: line-through; }
+.survey__group .search { padding-left: 14px; }
+@media (max-width: 640px) {
+  .sched-dates { grid-template-columns: minmax(0, 1fr); gap: 0; }
+}

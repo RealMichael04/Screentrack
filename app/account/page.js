@@ -41,6 +41,8 @@ export default async function AccountPage() {
         </p>
 
         <div className="account__actions">
+          <Link href="/recommend" className="btn btn--ghost">Get recommendations</Link>
+          <Link href="/schedule" className="btn btn--ghost">My schedules</Link>
           <Link href="/" className="btn btn--ghost">Back to home</Link>
           <form action={signOut}>
             <button type="submit" className="btn btn--primary">Sign out</button>

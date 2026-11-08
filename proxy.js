@@ -11,5 +11,5 @@ export default async function proxy(request) {
 }
 
 export const config = {
-  matcher: ["/account/:path*"],
+  matcher: ["/account/:path*", "/recommend/:path*", "/schedule/:path*"],
 };

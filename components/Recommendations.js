@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import SectionHeader from "./SectionHeader";
 import Reveal from "./Reveal";
@@ -204,6 +205,9 @@ export default function Recommendations() {
               ))}
             </div>
             <p className="caption">Sample titles and results for demonstration.</p>
+            <div className="reco-cta">
+              <Link href="/recommend" className="btn btn--primary">Try it for real</Link>
+            </div>
           </Reveal>
         </div>
       </div>
